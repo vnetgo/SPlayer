@@ -51,7 +51,6 @@ const openLoginWin = async (mainWin: BrowserWindow) => {
         if (loginTimer) clearInterval(loginTimer);
         const value = `MUSIC_U=${MUSIC_U[0].value};`;
         // 发送回主进程
-        console.log("cookie:", value);
         mainWin?.webContents.send("send-cookies", value);
         loginWin.destroy();
       }
